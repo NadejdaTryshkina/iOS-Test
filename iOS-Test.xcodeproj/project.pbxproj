@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		025AC0849BD3B8E6D974C936 /* Pods_iOS_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDD2B9DCC3F6C086E173822 /* Pods_iOS_Test.framework */; };
 		272C912027A3C4A800B996DB /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C911F27A3C4A800B996DB /* TransitionManager.swift */; };
+		273874C127AD441000B281D7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 273874C027AD441000B281D7 /* .swiftlint.yml */; };
+		273874C327AD444C00B281D7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 273874C227AD444C00B281D7 /* .gitignore */; };
 		274B66C627A14E3300224295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B66C527A14E3300224295 /* AppDelegate.swift */; };
 		274B66CA27A14E3300224295 /* ContributorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B66C927A14E3300224295 /* ContributorsListViewController.swift */; };
 		274B66CD27A14E3300224295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274B66CB27A14E3300224295 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		272C911F27A3C4A800B996DB /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		273874C027AD441000B281D7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		273874C227AD444C00B281D7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		274B66C227A14E3300224295 /* iOS-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		274B66C527A14E3300224295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274B66C927A14E3300224295 /* ContributorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsListViewController.swift; sourceTree = "<group>"; };
@@ -100,11 +104,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		273874BF27AD43F500B281D7 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				273874C027AD441000B281D7 /* .swiftlint.yml */,
+				273874C227AD444C00B281D7 /* .gitignore */,
+			);
+			name = Configs;
+			path = "iOS-Test";
+			sourceTree = "<group>";
+		};
+		273874C427AD450800B281D7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				274B66F227A1749600224295 /* Core */,
+				274B66D927A14EAE00224295 /* AppContainer */,
+				274B66DB27A14F5500224295 /* UI */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		274B66B927A14E3300224295 = {
 			isa = PBXGroup;
 			children = (
 				274B66D327A14E3500224295 /* Info.plist */,
 				274B66C427A14E3300224295 /* iOS-Test */,
+				273874BF27AD43F500B281D7 /* Configs */,
 				274B66C327A14E3300224295 /* Products */,
 				64AF4B5FD332D92E7E1037FB /* Pods */,
 				15689E2EDCBDCBBA6BF05106 /* Frameworks */,
@@ -122,7 +147,7 @@
 		274B66C427A14E3300224295 /* iOS-Test */ = {
 			isa = PBXGroup;
 			children = (
-				274B66DA27A14EBA00224295 /* Application */,
+				273874C427AD450800B281D7 /* Application */,
 				274B671227A2918800224295 /* Resources */,
 			);
 			path = "iOS-Test";
@@ -139,16 +164,6 @@
 				274B66E527A1500400224295 /* AppRouter.swift */,
 			);
 			path = AppContainer;
-			sourceTree = "<group>";
-		};
-		274B66DA27A14EBA00224295 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				274B66F227A1749600224295 /* Core */,
-				274B66D927A14EAE00224295 /* AppContainer */,
-				274B66DB27A14F5500224295 /* UI */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		274B66DB27A14F5500224295 /* UI */ = {
@@ -262,6 +277,7 @@
 			buildConfigurationList = 274B66D627A14E3500224295 /* Build configuration list for PBXNativeTarget "iOS-Test" */;
 			buildPhases = (
 				4DCB7831B2F76913CEAE6C0C /* [CP] Check Pods Manifest.lock */,
+				273874BE27AD411000B281D7 /* Swiftlint */,
 				274B670F27A2898A00224295 /* R.Swift */,
 				274B66BE27A14E3300224295 /* Sources */,
 				274B66BF27A14E3300224295 /* Frameworks */,
@@ -315,6 +331,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				273874C327AD444C00B281D7 /* .gitignore in Resources */,
+				273874C127AD441000B281D7 /* .swiftlint.yml in Resources */,
 				274B66D227A14E3500224295 /* LaunchScreen.storyboard in Resources */,
 				274B66CF27A14E3500224295 /* Assets.xcassets in Resources */,
 				274B66CD27A14E3300224295 /* Main.storyboard in Resources */,
@@ -324,6 +342,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		273874BE27AD411000B281D7 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#debug log\nset -x\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		274B670F27A2898A00224295 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

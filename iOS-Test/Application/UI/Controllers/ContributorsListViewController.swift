@@ -15,6 +15,7 @@ final class ContributorsListViewController: BaseViewController {
 
     private var interactor: ContributorsListInteractor!
     private var transitionManager: TransitionManager = TransitionManager()
+    private var indexPathForLastSelectedCell: IndexPath?
 
     // MARK: - Lifecycle
 
@@ -34,11 +35,13 @@ extension ContributorsListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let contributor = interactor.contributor(at: indexPath.row)
+        indexPathForLastSelectedCell = indexPath
         appContainer?.present(type: SingleContributorViewController.self,
                               options: SingleContributorViewControllerOptions(contributor: contributor),
                               from: self,
                               style: .push(asRoot: false),
                               animated: true)
+
     }
 
 }
@@ -119,11 +122,12 @@ extension ContributorsListViewController: BaseViewControllerProtocol {
 extension ContributorsListViewController: TransitionableViewController {
 
     func transitioningView() -> TransitionViewWithFrame? {
-        guard let index = tableView.indexPathForSelectedRow,
-              let cell = tableView.cellForRow(at: index) as? ContributorCell else {
+        guard let indexPath = indexPathForLastSelectedCell,
+              let cell = tableView.cellForRow(at: indexPath) as? ContributorCell else {
             return nil
         }
 
+        tableView.deselectRow(at: indexPath, animated: true)
         let frame = view.convert(cell.avatarImageView.frame, from: cell)
         return (imageView: cell.avatarImageView, frame: frame)
     }

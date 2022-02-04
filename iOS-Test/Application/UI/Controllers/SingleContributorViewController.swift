@@ -15,6 +15,9 @@ final class SingleContributorViewController: BaseViewController {
 
     @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var avatarVerticalOffsetConstraint: NSLayoutConstraint!
+    @IBOutlet private var avatarWidthScalingConstraint: NSLayoutConstraint!
+    @IBOutlet private var avatarHeightAspectConstraint: NSLayoutConstraint!
 
     private var options: SingleContributorViewControllerOptions?
 
@@ -60,21 +63,16 @@ extension SingleContributorViewController: BaseViewControllerProtocol {
 extension SingleContributorViewController: TransitionableViewController {
 
     func transitioningView() -> TransitionViewWithFrame? {
+        let width = view.frame.width * avatarWidthScalingConstraint.multiplier
+        let height = width / avatarHeightAspectConstraint.multiplier
+        let verticalOffset = avatarVerticalOffsetConstraint.constant
 
-//        let constraints = view.constraints.filter { ($0.firstItem as? UIView) == avatarImageView }
-//
-//        let widthConst = constraints.first(where: { $0.firstAttribute == .width })?.multiplier ?? 1
-//        let w = view.frame.width * widthConst
-//        let heightConst = avatarImageView.constraints.first(where: { $0.secondAttribute == .height})?.multiplier ?? 1
-//        let h = w / heightConst
-//        let dy = constraints.first(where: { $0.firstAttribute == .centerY })?.constant ?? 0
-
-        return (imageView: avatarImageView, frame: .zero)
-//                frame: CGRect(x: (view.frame.width - w) / 2.0,
-//                              y: (view.frame.height - h) / 2 + dy,
-//                              width: w,
-//                              height: h)
-//        )
+        return (imageView: avatarImageView,
+                frame: CGRect(x: (view.frame.width - width) / 2.0,
+                              y: (view.frame.height - height) / 2 + verticalOffset,
+                              width: width,
+                              height: height)
+        )
     }
 
     func transitionDirection() -> TransitionDirection {

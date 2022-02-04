@@ -133,7 +133,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avatarHeightAspectConstraint" destination="V30-rf-sDu" id="rU8-Hg-QeO"/>
                         <outlet property="avatarImageView" destination="RCp-qD-8Sv" id="MJu-mk-mbI"/>
+                        <outlet property="avatarVerticalOffsetConstraint" destination="zyf-uq-h9f" id="5PO-8F-oqW"/>
+                        <outlet property="avatarWidthScalingConstraint" destination="a9k-Wj-kIL" id="Y5F-cd-Le8"/>
                         <outlet property="nameLabel" destination="Bwe-H3-SL7" id="b7f-HB-blG"/>
                     </connections>
                 </viewController>

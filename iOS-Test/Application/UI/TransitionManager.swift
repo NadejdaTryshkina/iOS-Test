@@ -58,7 +58,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning {
         snapshotsmallView.contentMode = smallImageView.contentMode
         snapshotsmallView.image = smallImage
         snapshotsmallView.layer.cornerRadius = smallImageView.layer.cornerRadius
-        snapshotsmallView.frame = smallFrame//containerView.convert(imageView.frame, from: smallView)
+        snapshotsmallView.frame = containerView.convert(smallFrame, from: fromViewController.view)
 
         containerView.addSubview(toViewController.view)
         containerView.addSubview(snapshotsmallView)
@@ -103,7 +103,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning {
         let snapshotLargeView = UIImageView()
         snapshotLargeView.contentMode = largeImageView.contentMode
         snapshotLargeView.image = largeImageView.image
-        snapshotLargeView.frame = largeFrame
+        snapshotLargeView.frame = containerView.convert(largeFrame, from: fromViewController.view)
 
         let mainFrame = transitionContext.initialFrame(for: fromViewController)
         let smallFrame = smallView.frame

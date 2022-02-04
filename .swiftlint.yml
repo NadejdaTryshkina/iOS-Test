@@ -19,6 +19,8 @@ closure_body_length:
 
 identifier_name:
     max_length: 150
+    excluded:
+    - id
 
 file_length:
     warning: 500

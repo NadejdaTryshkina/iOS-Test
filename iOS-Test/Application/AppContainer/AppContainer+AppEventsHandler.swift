@@ -16,12 +16,13 @@ extension AppContainer: AppEventsHandler {
 
         Logger.setup()
         present(type: ContributorsListViewController.self,
-                              options: Void(),
-                              from: nil,
-                              style: .push(asRoot: true),
-                              animated: true)
+                options: Void(),
+                from: nil,
+                style: .push(asRoot: true),
+                animated: true)
         return true
     }
+
 }
 
 internal class AppCoordinator {
@@ -32,10 +33,10 @@ internal class AppCoordinator {
 
     func handleStartup() {
         appContainer?.present(type: ContributorsListViewController.self,
-                                      options: (),
-                                      from: nil,
-                                      style: .push(asRoot: true),
-                                      animated: false)
+                              options: (),
+                              from: nil,
+                              style: .push(asRoot: true),
+                              animated: false)
     }
 
 }

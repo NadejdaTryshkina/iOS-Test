@@ -47,10 +47,10 @@ internal class AppContainer {
 // MARK: - AppContainerProtocol
 
 extension AppContainer: AppContainerProtocol {
+
     var isModalViewControllerOnScreen: Bool {
         return false
     }
-
 
     var taskManager: AppTaskManagerProtocol {
         return internalTaskManager
@@ -80,7 +80,6 @@ extension AppContainer: AppContainerProtocol {
                                from: UIViewController?,
                                style: NavigationStyle,
                                animated: Bool) -> UIViewController? {
-        // TODO: rename presentViewController to present in app router
         return appRouter.presentViewController(controller: controller, from: from, style: style, animated: animated)
     }
 

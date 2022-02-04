@@ -60,4 +60,5 @@ internal struct AppError: AppErrorProtocol {
             return false
         }
     }
+
 }

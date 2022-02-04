@@ -5,8 +5,8 @@
 //  Created by Nadejda Tryshkina on 26.01.2022.
 //
 
-import UIKit
 import Shakuro_iOS_Toolbox
+import UIKit
 
 final class ContributorsListViewController: BaseViewController {
 
@@ -25,11 +25,13 @@ final class ContributorsListViewController: BaseViewController {
         navigationController?.delegate = transitionManager
         interactor.requestContributorsList()
     }
+
 }
 
 // MARK: - UITableViewDelegate
 
 extension ContributorsListViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let contributor = interactor.contributor(at: indexPath.row)
         appContainer?.present(type: SingleContributorViewController.self,
@@ -38,11 +40,13 @@ extension ContributorsListViewController: UITableViewDelegate {
                               style: .push(asRoot: false),
                               animated: true)
     }
+
 }
 
 // MARK: - UITableViewDataSource
 
 extension ContributorsListViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(indexPath: indexPath,
                                                  reuseIdentifier: R.reuseIdentifier.contributorCell.identifier)
@@ -57,11 +61,13 @@ extension ContributorsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return interactor.contributionsCount
     }
+
 }
 
 // MARK: - ContributorsInteractorOutput
 
 extension ContributorsListViewController: ContributorsInteractorOutput {
+
     func willSendServerRequest() {
         loadingIndicator.setHidden(false, animated: true)
     }
@@ -105,11 +111,13 @@ extension ContributorsListViewController: BaseViewControllerProtocol {
 
         return viewController
     }
+
 }
 
 // MARK: - TransitionableViewController
 
 extension ContributorsListViewController: TransitionableViewController {
+
     func transitioningView() -> TransitionViewWithFrame? {
         guard let index = tableView.indexPathForSelectedRow,
               let cell = tableView.cellForRow(at: index) as? ContributorCell else {
@@ -123,4 +131,5 @@ extension ContributorsListViewController: TransitionableViewController {
     func transitionDirection() -> TransitionDirection {
         return .push
     }
+
 }

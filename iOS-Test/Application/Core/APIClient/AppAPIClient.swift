@@ -1,6 +1,6 @@
 import Alamofire
-import Shakuro_iOS_Toolbox
 import Foundation
+import Shakuro_iOS_Toolbox
 
 // MARK: - HTTPClient
 

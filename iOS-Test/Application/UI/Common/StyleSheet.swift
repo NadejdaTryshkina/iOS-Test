@@ -42,17 +42,17 @@ class StyleSheet {
         case helveticaNeueLight = "HelveticaNeue-Light"
         case helveticaNeueBold = "HelveticaNeue-Bold"
 
-        static let interUIRegular11 = unwrap({ UIFont.systemFont(ofSize: 11,  weight: .regular) })
-        static let interUIRegular14 = unwrap({ UIFont.systemFont(ofSize: 14,  weight: .regular) })
-        static let interUIRegular16 = unwrap({ UIFont.systemFont(ofSize: 16,  weight: .regular) })
-        static let interUIRegular22 = unwrap({ UIFont.systemFont(ofSize: 22,  weight: .regular) })
-        static let interUIRegular24 = unwrap({ UIFont.systemFont(ofSize: 24,  weight: .regular) })
-        static let interUIRegular32 = unwrap({ UIFont.systemFont(ofSize: 32,  weight: .regular) })
+        static let interUIRegular11 = unwrap({ UIFont.systemFont(ofSize: 11, weight: .regular) })
+        static let interUIRegular14 = unwrap({ UIFont.systemFont(ofSize: 14, weight: .regular) })
+        static let interUIRegular16 = unwrap({ UIFont.systemFont(ofSize: 16, weight: .regular) })
+        static let interUIRegular22 = unwrap({ UIFont.systemFont(ofSize: 22, weight: .regular) })
+        static let interUIRegular24 = unwrap({ UIFont.systemFont(ofSize: 24, weight: .regular) })
+        static let interUIRegular32 = unwrap({ UIFont.systemFont(ofSize: 32, weight: .regular) })
 
-        static let interUIBold14 = unwrap({ UIFont.systemFont(ofSize: 14,  weight: .bold) })
-        static let interUIBold16 = unwrap({ UIFont.systemFont(ofSize: 16,  weight: .bold) })
-        static let interUIBold24 = unwrap({ UIFont.systemFont(ofSize: 24,  weight: .bold) })
-        static let interUIBold32 = unwrap({ UIFont.systemFont(ofSize: 32,  weight: .bold) })
+        static let interUIBold14 = unwrap({ UIFont.systemFont(ofSize: 14, weight: .bold) })
+        static let interUIBold16 = unwrap({ UIFont.systemFont(ofSize: 16, weight: .bold) })
+        static let interUIBold24 = unwrap({ UIFont.systemFont(ofSize: 24, weight: .bold) })
+        static let interUIBold32 = unwrap({ UIFont.systemFont(ofSize: 32, weight: .bold) })
 
         static let buttonAttributedTitleFont = FontDescriptor(name: interUIBold.rawValue, size: 14, letterSpacing: 0, lineHeight: 0)
         static let titleFont = helveticaNeueLight.fontWithSize(22)

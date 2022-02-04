@@ -129,14 +129,16 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning {
 
         animator.startAnimation()
     }
+
 }
 
 extension TransitionManager: UINavigationControllerDelegate {
-    func navigationController(
-        _ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation,
-        from fromVC: UIViewController,
-        to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
+    func navigationController(_ navigationController: UINavigationController,
+                              animationControllerFor operation: UINavigationController.Operation,
+                              from fromVC: UIViewController,
+                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
     }
+
 }

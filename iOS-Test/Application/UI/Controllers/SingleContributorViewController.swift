@@ -22,9 +22,11 @@ final class SingleContributorViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
     }
+
 }
 
 private extension SingleContributorViewController {
+
     func setupUI() {
         nameLabel.font = StyleSheet.sharedInstance.font.interUIRegular32
         nameLabel.textColor = StyleSheet.sharedInstance.color.customDarkGray
@@ -32,6 +34,7 @@ private extension SingleContributorViewController {
 
         avatarImageView.loadImage(at: options?.contributor?.avatarURL, withPlaceholder: R.image.avatarPlaceholder())
     }
+
 }
 
 // MARK: - BaseViewControllerProtocol
@@ -49,30 +52,33 @@ extension SingleContributorViewController: BaseViewControllerProtocol {
         viewController.options = options
         return viewController
     }
+
 }
 
 // MARK: - TransitionableViewController
 
 extension SingleContributorViewController: TransitionableViewController {
+
     func transitioningView() -> TransitionViewWithFrame? {
 
-        let constraints = view.constraints.filter { ($0.firstItem as? UIView) == avatarImageView }
+//        let constraints = view.constraints.filter { ($0.firstItem as? UIView) == avatarImageView }
+//
+//        let widthConst = constraints.first(where: { $0.firstAttribute == .width })?.multiplier ?? 1
+//        let w = view.frame.width * widthConst
+//        let heightConst = avatarImageView.constraints.first(where: { $0.secondAttribute == .height})?.multiplier ?? 1
+//        let h = w / heightConst
+//        let dy = constraints.first(where: { $0.firstAttribute == .centerY })?.constant ?? 0
 
-        let widthConst = constraints.first(where: { $0.firstAttribute == .width })?.multiplier ?? 1
-        let w = view.frame.width * widthConst
-        let heightConst = avatarImageView.constraints.first(where: { $0.secondAttribute == .height})?.multiplier ?? 1
-        let h = w / heightConst
-        let dy = constraints.first(where: { $0.firstAttribute == .centerY})?.constant ?? 0
-
-        return (imageView: avatarImageView,
-                frame: CGRect(x: (view.frame.width - w) / 2.0,
-                              y: (view.frame.height - h) / 2 + dy,
-                              width: w,
-                              height: h)
-        )
+        return (imageView: avatarImageView, frame: .zero)
+//                frame: CGRect(x: (view.frame.width - w) / 2.0,
+//                              y: (view.frame.height - h) / 2 + dy,
+//                              width: w,
+//                              height: h)
+//        )
     }
 
     func transitionDirection() -> TransitionDirection {
         return .pop
     }
+
 }

@@ -32,4 +32,5 @@ class ContributorCell: UITableViewCell {
         nameLabel.text = contributor?.login
         idLabel.text = contributor?.id
     }
+
 }

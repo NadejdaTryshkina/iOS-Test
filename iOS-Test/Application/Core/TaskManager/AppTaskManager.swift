@@ -30,4 +30,5 @@ extension AppTaskManager: AppTaskManagerProtocol {
         return performOperation(operationType: LoadContributorsOperation.self,
                                 options: LoadContributorsOperationOptions(apiClient: apiClient))
     }
+
 }

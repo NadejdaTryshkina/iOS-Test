@@ -8,8 +8,8 @@ import Shakuro_iOS_Toolbox
 
 protocol ContributorsInteractorOutput: AnyObject {
     func willSendServerRequest()
-    func interactor(_ interactor: ContributorsListInteractor, didLoadContributors list: [Contributor])
-    func interactor(_ interactor: ContributorsListInteractor, didReceiveResponseWithError error: AppError?)
+    func interactorDidLoadContributors()
+    func interactorDidReceiveResponse(with error: AppError?)
 }
 
 class ContributorsListInteractor {
@@ -37,13 +37,12 @@ class ContributorsListInteractor {
 
             var appError: AppError?
             switch result {
-            case .failure(let error):
-                appError = AppError(error)
-                actualSelf.output?.interactor(actualSelf, didReceiveResponseWithError: appError)
-
             case .success(let contributors):
                 actualSelf.contributors = contributors
-                actualSelf.output?.interactor(actualSelf, didLoadContributors: contributors)
+                actualSelf.output?.interactorDidLoadContributors()
+            case .failure(let error):
+                appError = AppError(error)
+                actualSelf.output?.interactorDidReceiveResponse(with: appError)
             default: break
             }
         })

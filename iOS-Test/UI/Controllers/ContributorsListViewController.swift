@@ -78,19 +78,18 @@ extension ContributorsListViewController: UITableViewDataSource {
 // MARK: - ContributorsInteractorOutput
 
 extension ContributorsListViewController: ContributorsInteractorOutput {
+    func interactorDidLoadContributors() {
+        loadingIndicator.stopAnimating()
+        tableView.reloadData()
+    }
 
     func willSendServerRequest() {
         refresher?.endRefreshingAnimation()
         loadingIndicator.startAnimating()
     }
 
-    func interactor(_ interactor: ContributorsListInteractor, didLoadContributors list: [Contributor]) {
-        loadingIndicator.stopAnimating()
-        tableView.reloadData()
-    }
-
-    func interactor(_ interactor: ContributorsListInteractor, didReceiveResponseWithError error: AppError?) {
-        loadingIndicator.stopAnimating()
+    func interactorDidReceiveResponse(with error: AppError?) {
+    loadingIndicator.stopAnimating()
 
         guard let appContainerActual = appContainer else {
             return

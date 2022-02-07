@@ -16,15 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-0v-yzv" customClass="ActivityIndicatorView" customModule="iOS_Test" customModuleProvider="target">
-                                <rect key="frame" x="182" y="150" width="50" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9aM-yp-iO0"/>
-                                    <constraint firstAttribute="width" constant="50" id="z8i-qf-41s"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Udd-2z-VJP">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,20 +70,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="DRf-b7-J7x"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="M8H-Jc-6Qe">
+                                <rect key="frame" x="197" y="64" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WPa-0v-yzv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="150" id="1Mb-WI-jMG"/>
                             <constraint firstItem="Udd-2z-VJP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9wl-j6-iFK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Udd-2z-VJP" secondAttribute="trailing" id="FW5-54-Kjm"/>
-                            <constraint firstItem="WPa-0v-yzv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fn7-ah-iON"/>
                             <constraint firstItem="Udd-2z-VJP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fZW-8P-E8w"/>
+                            <constraint firstItem="M8H-Jc-6Qe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gmB-o2-OyU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Udd-2z-VJP" secondAttribute="bottom" id="gxw-KL-FQS"/>
+                            <constraint firstItem="M8H-Jc-6Qe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="rFS-aU-yA9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loadingIndicator" destination="WPa-0v-yzv" id="lU5-Kj-Ear"/>
+                        <outlet property="loadingIndicator" destination="M8H-Jc-6Qe" id="aDV-gm-LOR"/>
                         <outlet property="tableView" destination="Udd-2z-VJP" id="Tsi-4g-mMM"/>
                     </connections>
                 </viewController>
@@ -146,9 +140,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

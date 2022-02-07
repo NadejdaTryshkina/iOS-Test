@@ -25,6 +25,7 @@ class ContributorCell: UITableViewCell {
         super.prepareForReuse()
         nameLabel.text = ""
         idLabel.text = ""
+        avatarImageView.sd_cancelCurrentImageLoad()
     }
 
     func configure(with contributor: Contributor?) {

@@ -11,7 +11,8 @@ import UIKit
 final class ContributorsListViewController: BaseViewController {
 
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var loadingIndicator: ActivityIndicatorView!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
+    private var refresher: PullToRefreshView?
 
     private var interactor: ContributorsListInteractor!
     private var transitionManager: TransitionManager = TransitionManager()
@@ -21,12 +22,19 @@ final class ContributorsListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshIndicator = UIActivityIndicatorView()
+        refreshIndicator.hidesWhenStopped = false
+        refresher = PullToRefreshView(scrollView: tableView, length: 60.0, contentView: refreshIndicator)
         tableView.dataSource = self
         tableView.delegate = self
         navigationController?.delegate = transitionManager
-        interactor.requestContributorsList()
+        loadContributorsList()
+        refresher?.eventHandler = { self.loadContributorsList() }
     }
 
+    private func loadContributorsList() {
+        interactor.requestContributorsList()
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -72,15 +80,17 @@ extension ContributorsListViewController: UITableViewDataSource {
 extension ContributorsListViewController: ContributorsInteractorOutput {
 
     func willSendServerRequest() {
-        loadingIndicator.setHidden(false, animated: true)
+        refresher?.endRefreshingAnimation()
+        loadingIndicator.startAnimating()
     }
 
     func interactor(_ interactor: ContributorsListInteractor, didLoadContributors list: [Contributor]) {
+        loadingIndicator.stopAnimating()
         tableView.reloadData()
     }
 
     func interactor(_ interactor: ContributorsListInteractor, didReceiveResponseWithError error: AppError?) {
-        loadingIndicator.setHidden(true, animated: true)
+        loadingIndicator.stopAnimating()
 
         guard let appContainerActual = appContainer else {
             return

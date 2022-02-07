@@ -19,7 +19,7 @@ final class SingleContributorViewController: BaseViewController {
     @IBOutlet private var avatarWidthScalingConstraint: NSLayoutConstraint!
     @IBOutlet private var avatarHeightAspectConstraint: NSLayoutConstraint!
 
-    private var options: SingleContributorViewControllerOptions?
+    private var contributor: Contributor?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,9 @@ private extension SingleContributorViewController {
     func setupUI() {
         nameLabel.font = StyleSheet.sharedInstance.font.interUIRegular32
         nameLabel.textColor = StyleSheet.sharedInstance.color.customDarkGray
-        nameLabel.text = options?.contributor?.login
+        nameLabel.text = contributor?.login ?? "Mr. Anonimous"
 
-        avatarImageView.loadImage(at: options?.contributor?.avatarURL, withPlaceholder: R.image.avatarPlaceholder())
+        avatarImageView.loadImage(at: contributor?.avatarURL, withPlaceholder: R.image.avatarPlaceholder())
     }
 
 }
@@ -52,7 +52,7 @@ extension SingleContributorViewController: BaseViewControllerProtocol {
         let viewController = unwrap { R.storyboard.main.singleContributorViewControllerID() }
 
         viewController.title = NSLocalizedString("", comment: "")
-        viewController.options = options
+        viewController.contributor = options.contributor
         return viewController
     }
 

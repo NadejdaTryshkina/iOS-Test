@@ -31,8 +31,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return appContainer.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-       // appEventsHandler?.applicationDidBecomeActive(application)
-    }
-
 }

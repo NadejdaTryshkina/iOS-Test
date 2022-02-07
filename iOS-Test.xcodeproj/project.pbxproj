@@ -114,14 +114,38 @@
 			path = "iOS-Test";
 			sourceTree = "<group>";
 		};
-		273874C427AD450800B281D7 /* Application */ = {
+		273874C627AD58CC00B281D7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				274B66F227A1749600224295 /* Core */,
+				273874C727AD58F500B281D7 /* _deprecated */,
 				274B66D927A14EAE00224295 /* AppContainer */,
+				273874C827AD595000B281D7 /* Common */,
+				274B66F227A1749600224295 /* Core */,
 				274B66DB27A14F5500224295 /* UI */,
 			);
-			path = Application;
+			name = Application;
+			sourceTree = "<group>";
+		};
+		273874C727AD58F500B281D7 /* _deprecated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = _deprecated;
+			sourceTree = "<group>";
+		};
+		273874C827AD595000B281D7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		273874C927AD716000B281D7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				274B66F027A1686F00224295 /* ContributorCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		274B66B927A14E3300224295 = {
@@ -147,7 +171,7 @@
 		274B66C427A14E3300224295 /* iOS-Test */ = {
 			isa = PBXGroup;
 			children = (
-				273874C427AD450800B281D7 /* Application */,
+				273874C627AD58CC00B281D7 /* Application */,
 				274B671227A2918800224295 /* Resources */,
 			);
 			path = "iOS-Test";
@@ -169,6 +193,7 @@
 		274B66DB27A14F5500224295 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				273874C927AD716000B281D7 /* Cells */,
 				274B66ED27A1667E00224295 /* Controllers */,
 				274B66DC27A14F5D00224295 /* Common */,
 				272C911F27A3C4A800B996DB /* TransitionManager.swift */,
@@ -194,7 +219,6 @@
 				274B66C927A14E3300224295 /* ContributorsListViewController.swift */,
 				274B670627A181E500224295 /* ContributorsListInteractor.swift */,
 				274B66EE27A166E300224295 /* SingleContributorViewController.swift */,
-				274B66F027A1686F00224295 /* ContributorCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -202,10 +226,10 @@
 		274B66F227A1749600224295 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				274B670827A27B6400224295 /* TaskManager */,
 				274B66F627A1753F00224295 /* APIClient */,
-				274B66F427A174D000224295 /* Logger.swift */,
+				274B670827A27B6400224295 /* TaskManager */,
 				274B671327A2948100224295 /* AppError.swift */,
+				274B66F427A174D000224295 /* Logger.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";

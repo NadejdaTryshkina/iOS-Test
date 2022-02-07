@@ -14,7 +14,7 @@ class LoadContributorsOperation: BaseOperation<[Contributor], LoadContributorsOp
         let requestOptions = HTTPClient.RequestOptions(endpoint: AppAPIClientEndPoint.contributors,
                                                        method: .get,
                                                        parser: ContributorParser())
-        loadContributorsRequest = options.apiClient.sendRequest(options: requestOptions, completion: { (result) in
+        let request = options.apiClient.sendRequest(options: requestOptions, completion: { (result) in
             guard !self.isCancelled else {
                 self.finish(result: .cancelled)
                 return
@@ -28,6 +28,10 @@ class LoadContributorsOperation: BaseOperation<[Contributor], LoadContributorsOp
                 self.finish(result: .failure(error: error))
             }
         })
+
+        performProtected {
+            loadContributorsRequest = request
+        }
     }
 
     override func internalCancel() {

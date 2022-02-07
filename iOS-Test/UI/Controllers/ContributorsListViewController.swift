@@ -59,9 +59,9 @@ extension ContributorsListViewController: UITableViewDelegate {
 extension ContributorsListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(indexPath: indexPath,
+        let cell: ContributorCell = tableView.dequeueReusableCell(indexPath: indexPath,
                                                  reuseIdentifier: R.reuseIdentifier.contributorCell.identifier)
-        (cell as? ContributorCell)?.configure(with: interactor.contributor(at: indexPath.row))
+        cell.configure(with: interactor.contributor(at: indexPath.row))
         return cell
     }
 

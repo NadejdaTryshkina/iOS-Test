@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContributorCell: UITableViewCell {
+final class ContributorCell: UITableViewCell {
 
     @IBOutlet private(set) var avatarImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!

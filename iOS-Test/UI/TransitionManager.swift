@@ -19,7 +19,7 @@ protocol TransitionableViewController: UIViewController {
     func transitionDirection() -> TransitionDirection
 }
 
-class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning {
+final class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
@@ -131,6 +131,8 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning {
     }
 
 }
+
+// MARK: - UINavigationControllerDelegate
 
 extension TransitionManager: UINavigationControllerDelegate {
 

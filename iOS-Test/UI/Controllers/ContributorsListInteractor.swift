@@ -12,7 +12,7 @@ protocol ContributorsInteractorOutput: AnyObject {
     func interactorDidReceiveResponse(with error: AppError?)
 }
 
-class ContributorsListInteractor {
+final class ContributorsListInteractor {
 
     private let taskManager: AppTaskManagerProtocol
 

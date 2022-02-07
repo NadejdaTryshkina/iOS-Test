@@ -8,6 +8,7 @@
 import Foundation
 
 struct Contributor {
+
     let id: Int
     let login: String
     let avatarURLString: String?
@@ -19,4 +20,5 @@ struct Contributor {
             return nil
         }
     }
+
 }

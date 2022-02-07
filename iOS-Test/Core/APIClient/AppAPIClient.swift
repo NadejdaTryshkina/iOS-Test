@@ -35,6 +35,7 @@ enum AppAPIClientEndPoint {
             return "repos/videolan/vlc/contributors"
         }
     }
+
 }
 
 // MARK: - HTTPClientAPIEndPoint
@@ -44,6 +45,7 @@ extension AppAPIClientEndPoint: HTTPClientAPIEndPoint {
     func urlString() -> String {
         return "\(serverURLString)\(pathString)"
     }
+
 }
 
 // MARK: - Private
@@ -53,4 +55,5 @@ private extension AppAPIClientEndPoint {
     private var serverURLString: String {
         return "https://api.github.com/"
     }
+    
 }

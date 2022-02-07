@@ -26,17 +26,3 @@ final class ContributorParser: AppAPIClientParser<[Contributor]> {
     }
 
 }
-
-struct Contributor {
-    let id: Int
-    let login: String
-    let avatarURLString: String?
-
-    var avatarURL: URL? {
-        if let avatarURLString = avatarURLString {
-            return URL(string: avatarURLString)
-        } else {
-            return nil
-        }
-    }
-}

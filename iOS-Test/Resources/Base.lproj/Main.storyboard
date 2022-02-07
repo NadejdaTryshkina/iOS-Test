@@ -104,7 +104,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-qD-8Sv" customClass="UIImageView">
                                 <rect key="frame" x="52" y="202" width="310.5" height="362"/>
-                                <color key="backgroundColor" systemColor="systemFillColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RCp-qD-8Sv" secondAttribute="height" multiplier="6:7" id="V30-rf-sDu"/>
                                 </constraints>
@@ -142,9 +141,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

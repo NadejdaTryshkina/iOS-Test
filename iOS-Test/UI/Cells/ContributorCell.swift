@@ -31,7 +31,7 @@ class ContributorCell: UITableViewCell {
     func configure(with contributor: Contributor?) {
         avatarImageView.loadImage(at: contributor?.avatarURL, withPlaceholder: R.image.avatarPlaceholder())
         nameLabel.text = contributor?.login
-        idLabel.text = contributor?.id
+        idLabel.text = contributor?.id.description
     }
 
 }

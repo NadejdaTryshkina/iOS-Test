@@ -31,7 +31,6 @@
 		274B66FE27A1755F00224295 /* AppAPIClientParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B66F927A1755F00224295 /* AppAPIClientParser.swift */; };
 		274B66FF27A1755F00224295 /* AppAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B66FA27A1755F00224295 /* AppAPIClient.swift */; };
 		274B670027A1755F00224295 /* AppHTTPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B66FB27A1755F00224295 /* AppHTTPLogger.swift */; };
-		274B670427A178E100224295 /* DefaultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B670227A178E100224295 /* DefaultParser.swift */; };
 		274B670527A178E100224295 /* ContributorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B670327A178E100224295 /* ContributorParser.swift */; };
 		274B670727A181E500224295 /* ContributorsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B670627A181E500224295 /* ContributorsListInteractor.swift */; };
 		274B670A27A27BE800224295 /* LoadContributorsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B670927A27BE800224295 /* LoadContributorsOperation.swift */; };
@@ -70,7 +69,6 @@
 		274B66F927A1755F00224295 /* AppAPIClientParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAPIClientParser.swift; sourceTree = "<group>"; };
 		274B66FA27A1755F00224295 /* AppAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAPIClient.swift; sourceTree = "<group>"; };
 		274B66FB27A1755F00224295 /* AppHTTPLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPLogger.swift; sourceTree = "<group>"; };
-		274B670227A178E100224295 /* DefaultParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultParser.swift; sourceTree = "<group>"; };
 		274B670327A178E100224295 /* ContributorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorParser.swift; sourceTree = "<group>"; };
 		274B670627A181E500224295 /* ContributorsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsListInteractor.swift; sourceTree = "<group>"; };
 		274B670927A27BE800224295 /* LoadContributorsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadContributorsOperation.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 		274B670127A178D200224295 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				274B670227A178E100224295 /* DefaultParser.swift */,
 				274B670327A178E100224295 /* ContributorParser.swift */,
 			);
 			path = Parsers;
@@ -454,7 +451,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				278F1E8027B100B3002566E8 /* UIActivityIndicatorView+Refresh.swift in Sources */,
-				274B670427A178E100224295 /* DefaultParser.swift in Sources */,
 				274B66E027A14FBD00224295 /* MainWindow.swift in Sources */,
 				274B66EC27A1500400224295 /* AppContainer+AppErrorsHandler.swift in Sources */,
 				274B671127A28AC800224295 /* ActivityIndicatorView.swift in Sources */,

@@ -24,4 +24,3 @@ extension UIActivityIndicatorView: PullToRefreshContentViewProtocol {
     }
 
 }
-
